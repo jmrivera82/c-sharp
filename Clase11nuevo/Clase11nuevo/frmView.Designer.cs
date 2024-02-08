@@ -28,19 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnCargar = new Button();
             dgvListado = new DataGridView();
+            btnCargar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvListado).BeginInit();
             SuspendLayout();
-            // 
-            // btnCargar
-            // 
-            btnCargar.Location = new Point(34, 30);
-            btnCargar.Name = "btnCargar";
-            btnCargar.Size = new Size(107, 42);
-            btnCargar.TabIndex = 0;
-            btnCargar.Text = "Cargar";
-            btnCargar.UseVisualStyleBackColor = true;
             // 
             // dgvListado
             // 
@@ -50,23 +41,34 @@
             dgvListado.RowTemplate.Height = 25;
             dgvListado.Size = new Size(712, 216);
             dgvListado.TabIndex = 1;
+            dgvListado.CellContentClick += dgvListado_CellContentClick;
+            // 
+            // btnCargar
+            // 
+            btnCargar.Location = new Point(34, 32);
+            btnCargar.Name = "btnCargar";
+            btnCargar.Size = new Size(75, 23);
+            btnCargar.TabIndex = 2;
+            btnCargar.Text = "Cargar";
+            btnCargar.UseVisualStyleBackColor = true;
+            btnCargar.Click += btnCargarDatos_Click;
             // 
             // frmView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dgvListado);
             Controls.Add(btnCargar);
+            Controls.Add(dgvListado);
             Name = "frmView";
             Text = "Form1";
+            Load += frmView_Load;
             ((System.ComponentModel.ISupportInitialize)dgvListado).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Button btnCargar;
         private DataGridView dgvListado;
+        private Button btnCargar;
     }
 }
